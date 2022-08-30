@@ -5,8 +5,7 @@
   "main": "server/server.js",
   "devDependencies": {
     "concurrently": "^7.3.0"
-  }
-  "version": "0.1.0",
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -34,8 +33,5 @@
   "bugs": {
     "url": "https://github.com/kbjss071/hamster-wheel/issues"
   },
-  "homepage": "https://github.com/kbjss071/hamster-wheel#readme",
-  "dependencies": {
-    "bootstrap": "^5.2.0"
-  }
+  "homepage": "https://github.com/kbjss071/hamster-wheel#readme"
 }
