@@ -22,6 +22,7 @@ const typeDefs = gql `
     }
 
     type Query {
+
         exercises(): [Exercise]
         user: User
     }
@@ -40,5 +41,11 @@ const typeDefs = gql `
             fullname: String
         ): User
         login(username: String!, password: String!): Auth
+
+        saveExercise(exercise: Exercise): User
+        deleteExercise(exercise_id: String!): User
     }
 `
+
+module.exports = typeDefs;
+
