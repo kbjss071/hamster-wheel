@@ -1,5 +1,5 @@
 import './App.css';
-import BMI from './components/ BMI0;'
+import BMI from './components/ BMI;'
 
 function App() {
   return (

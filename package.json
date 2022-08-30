@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "server/server.js",
-
   "devDependencies": {
     "concurrently": "^7.3.0"
   },
@@ -23,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/kbjss071/hamster-wheel/issues"
   },
-  "homepage": "https://github.com/kbjss071/hamster-wheel#readme"
+  "homepage": "https://github.com/kbjss071/hamster-wheel#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0"
+  }
 }
