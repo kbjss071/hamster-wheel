@@ -24,6 +24,12 @@ const userSchema = new Schema (
             type: String,
             required: true,
         },
+        height: {
+            type: Number
+        },
+        weight: {
+            type: Number
+        },
         savedExercise: [exerciseSchema]
     },
     {
