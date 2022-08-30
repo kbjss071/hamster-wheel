@@ -55,8 +55,8 @@ userSchema.pre('save', async function (next) {
   };
   
   // when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
-  userSchema.virtual('bookCount').get(function () {
-    return this.savedBooks.length;
+  userSchema.virtual('exerciseCount').get(function () {
+    return this.savedExercise.length;
   });
   
   const User = model('User', userSchema);
