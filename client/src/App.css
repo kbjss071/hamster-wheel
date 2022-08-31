@@ -42,6 +42,15 @@ input, button {
   cursor: pointer;
   display: inline-block;
 }
+
+.otherButtons {
+  width: 64px;
+  height: 34px;
+  background: #AC4931;
+  cursor: pointer;
+  display: inline-block;
+}
+
 .buttonMagic {
   width: 40px;
   height: 34px;

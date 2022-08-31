@@ -9,8 +9,8 @@ function Navigation({ handleLoginClick }) {
         <section className="navigationComponent">
             <header>
                 <button onClick={handleClick} class="linkbutton"><div class="buttonMagic">Login</div><div class="ease buttonColor"></div></button>
-                <button onClick={handleClick} class="linkbutton"><div class="buttonMagic">Login</div><div class="ease buttonColor"></div></button>
-                <button onClick={handleClick} class="linkbutton"><div class="buttonMagic">Login</div><div class="ease buttonColor"></div></button>
+                <button class="otherButtons"><div class="buttonMagic">Button1</div><div class="ease buttonColor"></div></button>
+                <button class="otherButtons"><div class="buttonMagic">Button2</div><div class="ease buttonColor"></div></button>
             </header>
             
         </section>
