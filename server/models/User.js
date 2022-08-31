@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const bcrpyt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
 const exerciseSchema = require('./Exercise');
 
@@ -20,9 +20,8 @@ const userSchema = new Schema (
             type: String,
             required: true,
         },
-        full_name: {
+        fullname: {
             type: String,
-            required: true,
         },
         height: {
             type: Number

@@ -4,8 +4,14 @@ const {signToken} = require('../utils/auth');
 
 const resolvers = {
     Query: {
+        users: async() => {
+            return User.find()
+        },
+        user: async(parent, {userId}) => {
+            return User.findOne({_id: UserId});
+        },
         exercises: async() => Exercise.find(),
-        user: async(parent, args, context) => {
+        me: async(parent, args, context) => {
             if(context.user){
                 const user = await User.findById(context.user.id).populate({
                     populate: 'exercise'
@@ -50,7 +56,42 @@ const resolvers = {
 
             return { token, user };
 
+        },
+
+        saveExercise: async (parent, {userId, exercise}, context) => {
+            if(context.user) {
+                return User.findOneAndUpdate (
+                    {_id: userId},
+                    {
+                        $push: {savedExercise: {exercise}}
+                    },
+                    {
+                        new: true
+                    }
+                )
+            }
+            throw new AuthenticationError('Not logged in')
+        },
+
+        deleteExercise: async (parent, { exerciseId }, context) => {
+            if(context.user){
+                return User.findOneAndUpdate(
+                    {_id: context.user._id},
+                    {$pull: {savedExercise: {exercise_id: exerciseId}}},
+                    {new: true}
+                )
+            }
+            throw new AuthenticationError('You need to be logged in!')
+        },
+
+        removeUser: async(parent, args, context) => {
+            if(context.user) {
+                return User.findOneAndDelete({_id: context.user._id});
+            }
+            throw new AuthenticationError('You need to be logged in!');
         }
 
     },
 }
+
+module.exports = resolvers;
