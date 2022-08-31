@@ -1,6 +1,14 @@
 const { gql } = require('apollo-server-express');
 
 const typeDefs = gql `
+    input Exercise {
+        name: String!
+        bodyPart: String!
+        equipment: String!
+        target: String!
+        exercise_id: String!
+    }
+
     type Exercise {
         id: String!
         name: String!
@@ -15,9 +23,7 @@ const typeDefs = gql `
         email: String!
         password: String!
         fullname: String
-        savedExercise: [Exercise]
-        height: Number
-        weight: Number
+        savedExercise: [Exercise]!
     }
 
     type Auth {
@@ -29,16 +35,9 @@ const typeDefs = gql `
         users: [User]!
         user(userId: ID!): User
         me: User
-        exercises(): [Exercise]
+        exercises: [Exercise]
     }
 
-    input Exercise {
-        name
-        bodyPart
-        equipment
-        target
-        exercise_id
-    }
 
     type Mutation {
         addUser(
@@ -55,7 +54,7 @@ const typeDefs = gql `
         ): User
         login(username: String!, password: String!): Auth
         removeUser: User
-        saveExercise(userId: ID!, exercise: Exercise!): User
+        saveExercise(userId: ID!, exercise_id: String): User
         deleteExercise(exercise_id: String!): User
     }
 `

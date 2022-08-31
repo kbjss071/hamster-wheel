@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const exerciseSchema = require('./Exercise');
+const Exercise = require('./Exercise');
 
 const userSchema = new Schema (
     {
@@ -23,13 +23,13 @@ const userSchema = new Schema (
         fullname: {
             type: String,
         },
-        height: {
-            type: Number
-        },
-        weight: {
-            type: Number
-        },
-        savedExercise: [exerciseSchema]
+        // height: {
+        //     type: Number
+        // },
+        // weight: {
+        //     type: Number
+        // },
+        savedExercise: [Exercise.schema]
     },
     {
         toJSON:{
