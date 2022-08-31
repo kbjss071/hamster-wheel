@@ -1,5 +1,5 @@
 import React from "react";
-import CheckBMI from "./ BMI";
+import CheckBMI from "./BMI";
 
 const BMIOverlay = (props, { bmiPopup, BMI }) => {
     return (

@@ -1,4 +1,4 @@
-import BMI from './BMI';
+import BMI from '../components/BMI';
 import Exercises from '../components/Exercises';
 import Navigation from '../components/Navagation'
 import Login from '../components/Login'

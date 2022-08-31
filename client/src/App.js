@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import React, { useState } from 'react';
-import Login from './components/Login';
-import Home from './pages/Home'
+import Login from './pages/Login';
+import Home from './pages/Home';
+import Signup from './pages/Signup'
 import BMIOverlay from './components/BMIOverlay';
 import CheckBMI from './components/BMI';
 
@@ -54,6 +55,9 @@ function App() {
           <Route path="/login" element= {
             <Login />
           } />
+          <Route path="signup" element = {
+            <Signup />
+          }  />
         </Routes>
       </Router>
     </ApolloProvider>
