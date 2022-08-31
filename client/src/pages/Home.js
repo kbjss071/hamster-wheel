@@ -3,6 +3,7 @@ import CheckBMI from '../components/BMI';
 import Exercises from '../components/Exercises';
 import Navigation from '../components/Navagation'
 import Login from '../components/Login'
+import BMIOverlay from '../components/BMIOverlay'
 
 
 export default function Home () {
