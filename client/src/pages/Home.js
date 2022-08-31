@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import CheckBMI from '../components/BMI';
-
 import Exercises from '../components/Exercises';
 import Navigation from '../components/Navagation'
 import Login from '../components/Login'
-import BMIOverlay from '../components/BMIOverlay'
+
 
 export default function Home () {
 
@@ -23,8 +22,7 @@ export default function Home () {
             <Exercises />
             <Navigation handleLoginClick={handleLoginClick} />
             <Login loginPopup={loginPopup} />
-            <CheckBMI handleBMIClick={handleBMIClick} />
-            <BMIOverlay bmiPopup={bmiPopup} />
+            <CheckBMI handleBMIClick={handleBMIClick} bmiPopup={bmiPopup} />
         </div>
     )
 }
