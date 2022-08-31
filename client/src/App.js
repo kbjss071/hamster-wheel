@@ -4,6 +4,7 @@ import CheckBMI from './components/ BMI';
 import Login from './components/Login';
 import Navigation from './components/Navagation';
 import BMIOverlay from './components/BMIOverlay';
+import Exercises from './components/Exercises';
 
 function App() {
 

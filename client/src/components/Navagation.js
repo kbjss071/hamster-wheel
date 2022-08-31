@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function Navigation({ handleLoginClick }) {
 
     const handleClick = () => {

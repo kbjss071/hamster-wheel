@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
-const bcrpyt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
-const exerciseSchema = require('./Exercise');
+const Exercise = require('./Exercise');
 
 const userSchema = new Schema (
     {
@@ -20,11 +20,16 @@ const userSchema = new Schema (
             type: String,
             required: true,
         },
-        full_name: {
+        fullname: {
             type: String,
-            required: true,
         },
-        savedExercise: [exerciseSchema]
+        // height: {
+        //     type: Number
+        // },
+        // weight: {
+        //     type: Number
+        // },
+        savedExercise: [Exercise.schema]
     },
     {
         toJSON:{
@@ -49,8 +54,8 @@ userSchema.pre('save', async function (next) {
   };
   
   // when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
-  userSchema.virtual('bookCount').get(function () {
-    return this.savedBooks.length;
+  userSchema.virtual('exerciseCount').get(function () {
+    return this.savedExercise.length;
   });
   
   const User = model('User', userSchema);
