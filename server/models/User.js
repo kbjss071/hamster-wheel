@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const Order = require('./Order');
 
 const Exercise = require('./Exercise');
 
@@ -56,7 +57,7 @@ userSchema.pre('save', async function (next) {
     return bcrypt.compare(password, this.password);
   };
   
-  // when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
+  // when we query a user, we'll also get another field called `exerciseCount` with the number of exercises we have
   userSchema.virtual('exerciseCount').get(function () {
     return this.savedExercise.length;
   });
