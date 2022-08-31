@@ -4,6 +4,7 @@ import Exercises from '../components/Exercises';
 import Navigation from '../components/Navagation'
 import Login from '../components/Login'
 
+
 export default function Home () {
 
     const [ loginPopup, setLoginPopup] = useState(true);
