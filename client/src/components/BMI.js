@@ -28,7 +28,7 @@ function CheckBMI({ handleBMIClick }) {
             <input 
                 type='text'
                 value={weight}
-                placeholder='Weight (pounds)'
+                placeholder='Weight(pounds)'
                 onChange={onWeightChange}
             />
 
