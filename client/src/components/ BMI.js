@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
-export default function BMI() {
+function CheckBMI({ handleBMIClick }) {
 
     const [weight, setWeight] = useState('');
     const [height, setHeight] = useState('');
     const [BMI, setBMI] = useState('');
+    var bmiResults = document.getElementById("bmiResults");
 
     let onWeightChange = (e) => {
         setWeight(e.target.value);
@@ -19,9 +20,12 @@ export default function BMI() {
     let calculateBMI = (e) => {
         setBMI((703 * weight)/(height**2));
     }
-    return(
-        <div>
 
+    const handleClick = () => {
+        handleBMIClick()
+    }
+    return(
+        <div className="BMIcomponent">
             <input 
                 type='text'
                 value={weight}
@@ -36,10 +40,9 @@ export default function BMI() {
                 onChange={onHeightChange}
             />
 
-            <button onClick={calculateBMI}>Calculate BMI</button>
-
-            <p> BMI: {BMI} </p>
-
+            <button onClick={() => {handleClick(); calculateBMI();}}>Calculate BMI</button>
         </div>
     )
 }
+
+export default CheckBMI;
