@@ -1,5 +1,6 @@
 /* HTML element formatting */
 @import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
+
 body, html {
   font-family: 'Happy Monkey', sans-serif;
     -moz-osx-font-smoothing: grayscale;
