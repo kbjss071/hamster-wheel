@@ -39,7 +39,7 @@ function CheckBMI({ handleBMIClick }) {
                 onChange={onHeightChange}
             />
 
-            <button onClick={() => {handleClick(); calculateBMI();}}>Calculate BMI</button>
+            <button class="buttoncolor" onClick={() => {handleClick(); calculateBMI();}}>Calculate BMI</button>
         </div>
     )
 }
