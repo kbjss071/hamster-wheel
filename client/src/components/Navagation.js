@@ -1,18 +1,20 @@
 import React from "react";
 
-
-function Navagation({ handleLogicClick }) {
+function Navigation({ handleLoginClick }) {
 
     const handleClick = () => {
-        handleLogicClick()
+        handleLoginClick()
     }
     return (
-        <div className="navigation">
-            <div>
-                <button onClick={handleClick} class="linkbutton"><div class="popupTitle">Login</div><div class="ease buttonColor"></div></button>
-            </div>
-        </div>
+        <section className="navigationComponent">
+            <header>
+                <button onClick={handleClick} class="linkbutton"><div class="buttonMagic">Login</div><div class="ease buttonColor"></div></button>
+                <button class="otherButtons"><div class="buttonMagic">Button1</div><div class="ease buttonColor"></div></button>
+                <button class="otherButtons"><div class="buttonMagic">Button2</div><div class="ease buttonColor"></div></button>
+            </header>
+            
+        </section>
     )
 };
 
-export default Navagation;
+export default Navigation;

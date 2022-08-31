@@ -2,9 +2,12 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import React from 'react';
+import React, { useState } from 'react';
 import Login from './components/Login';
 import Home from './pages/Home'
+import BMIOverlay from './components/BMIOverlay';
+import CheckBMI from './components/BMI';
+
 
 
 const httpLink = createHttpLink({
@@ -30,6 +33,17 @@ const client = new ApolloClient({
 })
 
 function App() {
+
+  const [ loginPopup, setLoginPopup] = useState(true);
+  const [ bmiPopup, setBmiPopup] = useState(true);
+
+  const handleLoginClick = () => {
+    setLoginPopup((loginPopup) => !loginPopup);
+  };
+
+  const handleBMIClick = () => {
+    setBmiPopup((bmiPopup) => !bmiPopup);
+  }
   return (
     <ApolloProvider client={client}>
       <Router>
