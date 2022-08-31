@@ -1,14 +1,14 @@
 import React from "react";
 import CheckBMI from "./BMI";
 
-const BMIOverlay = (props, { bmiPopup, BMI }) => {
+const BMIOverlay = ({ bmiPopup, BMI }) => {
     return (
         <div className="loginComponent">
         <div className={`${bmiPopup ? "active" : ""} show`}>
                 <div className="container">
                     <div class="grid-container">
                     <div class="bmiOverLay">
-                        <h1>Your BMI is... { props.BMI }</h1>
+                        <h1>Your BMI is... {`${BMI}`}</h1> 
                         <div class="item1">18.5 and under... Underweight</div>
                         <div class="item2">18.5 to 24.9... Healthy Weight</div>
                         <div class="item3">25 to 29.9... Overweight</div>  
@@ -21,13 +21,5 @@ const BMIOverlay = (props, { bmiPopup, BMI }) => {
         </div>
     )
 };
-
-<div class="grid-container">
-  <div class="item1">1</div>
-  <div class="item2">2</div>
-  <div class="item3">3</div>  
-  <div class="item4">4</div>
-  <div class="item5">5</div>  
-</div>
 
 export default BMIOverlay;
