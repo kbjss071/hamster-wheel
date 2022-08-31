@@ -16,14 +16,6 @@ class Spinner extends React.Component {
         "Calves"
         ],
 
-        options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': '9f70ec10d0mshb56b0adfece8d42p1746f8jsn51a2dfd4690a',
-                'X-RapidAPI-Host': 'exercises-by-api-ninjas.p.rapidapi.com'
-            }
-        },
-
         radius: 75, // PIXELS
         rotate: 0, // DEGREES
         easeOut: 0, // SECONDS
@@ -168,6 +160,9 @@ class Spinner extends React.Component {
         net: netRotation,
         result: result
         });
+
+        console.log(this.state.list[result])
+
     };
 
     reset = () => {
