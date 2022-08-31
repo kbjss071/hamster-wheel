@@ -14,14 +14,19 @@ export default function Exercises() {
     const spin = () => {
         fetch(`https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=${muscle[Math.floor(Math.random() * muscle.length)]}`, options)
         .then(response => response.json())
-        .then(response => console.log(response))
-        .catch(err => console.error(err));
+        .then((response) => {
+            for (let i = 0; i < response.length; i++) {
+                if (response[i].equipment === 'none' || response[i].equipment === 'body_only') {
+                    console.log(response[i].name)
+                    break;
+                }
+            }
+        })
     }
 
     return(
         <div>
             <button className="btn-primary" onClick={spin}>SPIN THE WHEEL</button>
-            <h1>Random Exercise: </h1>
         </div>
     );
 }
