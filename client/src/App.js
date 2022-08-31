@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import React, { useState } from 'react';
+import Login from './components/Login';
 import Home from './pages/Home';
 import Signup from './pages/Signup'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import CheckBMI from './components/BMI';
 
 
 
