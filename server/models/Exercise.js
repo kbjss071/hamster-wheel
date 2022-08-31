@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, default: mongoose } = require('mongoose');
 
 const exerciseSchema = new Schema(
     {
@@ -7,7 +7,12 @@ const exerciseSchema = new Schema(
             required: true,
             trim: true,
         },
-        bodyPart: {
+        type: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        muscle: {
             type: String,
             required: true,
             trim: true
@@ -17,16 +22,14 @@ const exerciseSchema = new Schema(
             required: true,
             trim: true
         },
-        target: {
+        difficulty: {
             type: String,
             required: true,
             trim: true
         },
-        // Pass exercise id as it is in the API
-        exercise_id: {
+        instructions: {
             type: String,
             required: true,
-            trim: true
         }
     }
 )
