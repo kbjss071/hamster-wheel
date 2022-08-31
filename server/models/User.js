@@ -20,15 +20,18 @@ const userSchema = new Schema (
             type: String,
             required: true,
         },
-        fullname: {
+        firstName: {
             type: String,
         },
-        // height: {
-        //     type: Number
-        // },
-        // weight: {
-        //     type: Number
-        // },
+        lastName: {
+            type: String
+        },
+        height: {
+            type: Number
+        },
+        weight: {
+            type: Number
+        },
         savedExercise: [Exercise.schema]
     },
     {

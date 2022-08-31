@@ -7,7 +7,7 @@ const exerciseSchema = new Schema(
             required: true,
             trim: true,
         },
-        muscle: {
+        bodyPart: {
             type: String,
             required: true,
             trim: true
@@ -17,7 +17,7 @@ const exerciseSchema = new Schema(
             required: true,
             trim: true
         },
-        type: {
+        target: {
             type: String,
             required: true,
             trim: true

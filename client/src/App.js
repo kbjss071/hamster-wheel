@@ -1,19 +1,48 @@
 import './App.css';
-import React, { useState } from 'react';
-import BMI from './components/ BMI';
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import React from 'react';
 import Login from './components/Login';
-import Navagation from './components/Navagation';
-import Exercises from './components/Exercises';
+import Home from './pages/Home'
+
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+// Construct request middleware that will attach the JWT token to every request as an `authorization` header
+const authLink = setContext((_, { headers }) => {
+  // get the authentication token from local storage if it exists
+  const token = localStorage.getItem('id_token');
+  // return the headers to the context so httpLink can read them
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+})
 
 function App() {
   return (
-    <div style={{ backgroundColor: '#f4f1de', width: '100px', height: '100px'}} >
-    <div className="App">
-      <div>
-        <BMI /> <Exercises /> <Navagation /> <Login />
-      </div>
-    </div>
-    </div>
+    <ApolloProvider client={client}>
+      <Router>
+        <Routes>
+          <Route path="/" element= {
+            <Home />
+          } />
+          <Route path="/login" element= {
+            <Login />
+          } />
+        </Routes>
+      </Router>
+    </ApolloProvider>
   );
 }
 
