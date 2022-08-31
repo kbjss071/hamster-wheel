@@ -139,7 +139,7 @@ input, button {
 }
   
 
-&:hover {
+:hover {
 background: none;
 }
 
