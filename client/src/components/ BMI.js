@@ -5,7 +5,6 @@ function CheckBMI({ handleBMIClick }) {
     const [weight, setWeight] = useState('');
     const [height, setHeight] = useState('');
     const [BMI, setBMI] = useState('');
-    var bmiResults = document.getElementById("bmiResults");
 
     let onWeightChange = (e) => {
         setWeight(e.target.value);
