@@ -1,8 +1,5 @@
 import React from "react";
-<<<<<<< Updated upstream
-import CheckBMI from "./ BMI";
-=======
->>>>>>> Stashed changes
+import CheckBMI from "./BMI";
 
 const BMIOverlay = ({ bmiPopup, BMI }) => {
     return (

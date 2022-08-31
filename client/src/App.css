@@ -139,7 +139,8 @@ input, button {
   width: 450px;
 }
   
-&:hover {
+
+:hover {
 background: none;
 }
 

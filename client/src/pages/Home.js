@@ -1,9 +1,6 @@
-<<<<<<< Updated upstream
-import BMI from './BMI';
-=======
 import React, { useState } from "react";
 import CheckBMI from '../components/BMI';
->>>>>>> Stashed changes
+
 import Exercises from '../components/Exercises';
 import Navigation from '../components/Navagation'
 import Login from '../components/Login'
