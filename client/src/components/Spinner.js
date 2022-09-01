@@ -11,9 +11,11 @@ class Spinner extends React.Component {
       }
     },
 
+    fetch: null,
+
     list: [
-        "biceps",
-        "triceps",
+        "Biceps",
+        "Triceps",
         "chest",
         "lower_back",
         "middle_back",
@@ -167,7 +169,11 @@ class Spinner extends React.Component {
       result: result
     });
 
-    var res = this.state.list[result];
+    if (this.state.list[result] === 'Biceps') {
+        var res = 'biceps'
+    } else if (this.state.list[result] === 'Biceps') {
+        var res = 'triceps'
+    }
 
     fetch(`https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=${res}`, this.state.options)
         .then(response => response.json())
