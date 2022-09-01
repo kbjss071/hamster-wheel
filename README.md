@@ -1,12 +1,12 @@
 # Hamster Wheel  
 
-  ## Table Of Contents
--[Summary](#summary)
--[Installation](#installation)
--[Functionality](#functionality)
--[License](#license)
--[Contributions](#contributions)
--[Questions](#questions)
+## Table Of Contents
+- [Summary](#summary)
+- [Installation](#installation)
+- [Functionality](#functionality)
+- [License](#license)
+- [Contributions](#contributions)
+- [Questions](#questions)
 
 ## Summary
 Hamster Wheel is a new app that combines health, fitness, and fun. 
@@ -31,11 +31,11 @@ This application is licensed by None
 Please contact https://github.com/kbjss071 with any questions
 
 ## Contact Information:
--Email: [kbjss071@gmail.com]
+- Emails: [kbjss071@gmail.com]
         [farrahsyed97@gmail.com]
         [gabe.fonseca.04@gmail.com]
         [deaijaemungin@gmail.com]
--GitHub: [https://github.com/kbjss071]
+- GitHub: [https://github.com/kbjss071]
          [https://github.com/fairiberry]
          [https://github.com/gabefando]
          [https://github.com/OZ4Tech]
