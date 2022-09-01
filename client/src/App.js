@@ -2,13 +2,13 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import React, { useState } from 'react';
-import Login from './components/Login';
+import React from 'react';
 import Home from './pages/Home';
 import Signup from './pages/Signup'
+import ExerciseSpinner from './pages/ExerciseSpinner';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import CheckBMI from './components/BMI';
-
+import Navigation from './components/Navagation';
+import BMIPage from './pages/BMI';
 
 
 const httpLink = createHttpLink({
@@ -34,30 +34,23 @@ const client = new ApolloClient({
 })
 
 function App() {
-
-  const [ loginPopup, setLoginPopup] = useState(true);
-  const [ bmiPopup, setBmiPopup] = useState(true);
-
-  const handleLoginClick = () => {
-    setLoginPopup((loginPopup) => !loginPopup);
-  };
-
-  const handleBMIClick = () => {
-    setBmiPopup((bmiPopup) => !bmiPopup);
-  }
   return (
     <ApolloProvider client={client}>
       <Router>
+        <Navigation />
         <Routes>
           <Route path="/" element= {
             <Home />
           } />
-          <Route path="/login" element= {
-            <Login />
+          <Route path="/bmi" element= {
+            <BMIPage />
           } />
           <Route path="signup" element = {
             <Signup />
           }  />
+          <Route path="/exercises" element= {
+            <ExerciseSpinner />
+          } />
         </Routes>
       </Router>
     </ApolloProvider>
