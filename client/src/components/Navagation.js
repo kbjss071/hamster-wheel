@@ -1,7 +1,10 @@
 import React from "react";
-function Navigation({ handleLoginClick }) {
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
+
+function Navigation({ handleLoginClick }){
+  
+}
 
 function Nav() {
 

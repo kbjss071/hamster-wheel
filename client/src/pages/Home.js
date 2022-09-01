@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Exercises from '../components/Exercises';
 import Login from '../components/Login'
 
 
@@ -13,7 +12,6 @@ export default function Home () {
 
     return (
         <div>
-            <Navigation handleLoginClick={handleLoginClick} />
             <Login loginPopup={loginPopup} />
         </div>
     )
