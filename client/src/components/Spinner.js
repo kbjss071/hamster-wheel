@@ -18,10 +18,10 @@ class Spinner extends React.Component {
         "Triceps",
         "Chest",
         "Low Back",
-        "middle_back",
-        "abdominals",
-        "quadriceps",
-        "calves"
+        "Mid Back",
+        "Abs",
+        "Quads",
+        "Calves"
     ],
     radius: 75, // PIXELS
     rotate: 0, // DEGREES
