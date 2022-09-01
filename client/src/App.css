@@ -9,11 +9,23 @@ body, html {
 }
 input, button {
   border: 2px solid #8a3a27;
+  background-color: #AC4931;
   align-items: center;
+}
+
+Link {
+  color: #f4f1de;
+  text-decoration: none;
+}
+
+::placeholder, button {
+  color: #f4f1de;
 }
 /* Login overlay animations and stuff */
 .loginOverlay {
+  text-align: center;
   background: #AC4931;
+  color: #f4f1de;
   width: 250px;
   position: absolute;
   top: 50%;
@@ -40,6 +52,7 @@ input, button {
 .buttonMagic {
   width: 40px;
   height: 34px;
+  margin-right: 0px;
 }
 /* FOLLOWING SECTION IS USER INPUT */
 
@@ -138,12 +151,6 @@ input, button {
   font-size: 15px;
   width: 450px;
 }
-  
-
-:hover {
-background: none;
-}
-
 
 .linkbutton:hover .ease {
 width: 100%;
@@ -184,4 +191,35 @@ color: #000;
 .BMIcomponent {
   position:absolute;
   
+}
+.signupBox {
+  background: #AC4931;
+  color: #f4f1de;
+  width: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+.flex-row {
+  flex-direction: row !important;
+}
+
+.mx-1 {
+  margin-right: 0.25rem !important;
+  margin-left: 0.25rem !important;
+}
+
+.px-1 {
+  padding-right: 0.25rem !important;
+  padding-left: 0.25rem !important;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.my-2 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
 }

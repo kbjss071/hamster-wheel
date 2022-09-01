@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
 
-html {
+html, body {
   background-color: #b0bfd4;
   font-family: 'Happy Monkey', cursive; 
 }

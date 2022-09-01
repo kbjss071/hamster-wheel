@@ -1,20 +1,58 @@
 import React from "react";
-
 function Navigation({ handleLoginClick }) {
+import Auth from "../utils/auth";
+import { Link } from "react-router-dom";
 
-    const handleClick = () => {
-        handleLoginClick()
+function Nav() {
+
+  function showNavigation() {
+    if (Auth.loggedIn()) {
+      return (
+        <ul className="flex-row">
+          <li className="mx-1">
+            <Link to="/exercises">
+              Profile
+            </Link>
+          </li>
+          <li className="mx-1">
+            {/* this is not using the Link component to logout or user and then refresh the application to the start */}
+            <a href="/" onClick={() => Auth.logout()}>
+              Logout
+            </a>
+          </li>
+        </ul>
+      );
+    } else {
+      return (
+        <ul className="flex-row">
+          <li className="mx-1">
+            <Link to="/signup">
+              Signup
+            </Link>
+          </li>
+          <li className="mx-1">
+            <Link to="/login">
+              Login
+            </Link>
+          </li>
+        </ul>
+      );
     }
-    return (
-        <section className="navigationComponent">
-            <header>
-                <button onClick={handleClick} class="linkbutton"><div class="buttonMagic">Login</div><div class="ease buttonColor"></div></button>
-                <button class="otherButtons"><div class="buttonMagic">Button1</div><div class="ease buttonColor"></div></button>
-                <button class="otherButtons"><div class="buttonMagic">Button2</div><div class="ease buttonColor"></div></button>
-            </header>
-            
-        </section>
-    )
-};
+  }
 
-export default Navigation;
+  return (
+    <header className="flex-row px-1">
+      <h1>
+        <Link to="/">
+          Hampster wheel
+        </Link>
+      </h1>
+
+      <nav>
+        {showNavigation()}
+      </nav>
+    </header>
+  );
+}
+
+export default Nav;

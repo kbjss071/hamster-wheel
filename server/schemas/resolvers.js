@@ -1,7 +1,9 @@
 const { AuthenticationError } = require('apollo-server-express');
 const Exercise = require('../models/Exercise');
+const Save = require('../models/Saved');
 const User = require('../models/User')
 const {signToken} = require('../utils/auth');
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
     Query: {
@@ -11,7 +13,7 @@ const resolvers = {
         user: async(parent, {userId}) => {
             return User.findOne({_id: UserId});
         },
-        exercises: async() => Exercise.find(),
+        exercises: async(parent, {muscle}) => Exercise.find({muscle: muscle}),
         me: async(parent, args, context) => {
             if(context.user){
                 const user = await User.findById(context.user.id).populate({
@@ -59,12 +61,11 @@ const resolvers = {
 
         },
 
-        saveExercise: async (parent, {userId, exercise}, context) => {
+        saveExercise: async (parent, {exercise}, context) => {
             if(context.user) {
-                return User.findOneAndUpdate (
-                    {_id: userId},
-                    {
-                        $push: {savedExercise: {exercise}}
+                const save = new Save({exercise});
+                return User.findByIdAndUpdate (context.user.id, {
+                        $push: {savedExercise: save}
                     },
                     {
                         new: true
@@ -78,7 +79,7 @@ const resolvers = {
             if(context.user){
                 return User.findOneAndUpdate(
                     {_id: context.user._id},
-                    {$pull: {savedExercise: {exercise_id: exerciseId}}},
+                    {$pull: {savedExercise: {_id: exerciseId}}},
                     {new: true}
                 )
             }
