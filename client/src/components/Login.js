@@ -5,14 +5,15 @@ import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
 function Login({ loginPopup }) {
-  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [formState, setFormState] = useState({ username: '', password: '' });
   const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    console.log(formState)
     try {
       const mutationResponse = await login({
-        variables: { email: formState.email, password: formState.password },
+        variables: { username: formState.username, password: formState.password },
       });
       const token = mutationResponse.data.login.token;
       Auth.login(token);
@@ -35,13 +36,14 @@ function Login({ loginPopup }) {
             <div className="loginOverlay">
                 <div className="container">
                   <br />
-      <Link to="/signup">← Go to Signup</Link>
-      <h2>Welcome Back!</h2>
+      <Link to="/signup"></Link>
+      <h2>Please sign in!</h2>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
           <input
           type="text"
-          className="loginUser"
+          name="username"
+          className="username"
           placeholder="Username"
           onChange={handleChange}
           />
@@ -49,7 +51,8 @@ function Login({ loginPopup }) {
         <div className="flex-row space-between my-2">
           <input
           type="text"
-          className="loginUser"
+          name="password"
+          className="password"
           placeholder="Password"
           onChange={handleChange}
           />

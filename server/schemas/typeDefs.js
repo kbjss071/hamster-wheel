@@ -44,8 +44,8 @@ const typeDefs = gql `
             username: String!
             email: String!
             password: String!
-            firstName: String
-            lastName: String
+            firstName: String!
+            lastName: String!
         ): Auth
         updateUser(
             username: String
