@@ -185,3 +185,26 @@ color: #000;
   position:absolute;
   
 }
+
+.flex-row {
+  flex-direction: row !important;
+}
+
+.mx-1 {
+  margin-right: 0.25rem !important;
+  margin-left: 0.25rem !important;
+}
+
+.px-1 {
+  padding-right: 0.25rem !important;
+  padding-left: 0.25rem !important;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.my-2 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}

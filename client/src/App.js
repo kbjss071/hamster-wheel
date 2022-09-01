@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import Login from './components/Login';
 import Home from './pages/Home';
 import Signup from './pages/Signup'
+import Nav from './components/Navagation'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import CheckBMI from './components/BMI';
 
@@ -48,6 +49,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
+        <Nav />
         <Routes>
           <Route path="/" element= {
             <Home />
@@ -58,6 +60,9 @@ function App() {
           <Route path="signup" element = {
             <Signup />
           }  />
+          {/* <Route path="exercises" element = {
+            </>
+          }/> */}
         </Routes>
       </Router>
     </ApolloProvider>
