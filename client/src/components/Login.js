@@ -34,6 +34,7 @@ function Login({ loginPopup }) {
         <div className={`${loginPopup ? "active" : ""} show`}>
             <div className="loginOverlay">
                 <div className="container">
+                  <br />
       <Link to="/signup">← Go to Signup</Link>
       <h2>Welcome Back!</h2>
       <form onSubmit={handleFormSubmit}>
@@ -62,6 +63,8 @@ function Login({ loginPopup }) {
           <button
           type="submit"
           className="buttonMagic, linkbutton">Login</button>
+          <br />
+          <br />
         </div>
       </form>
     </div>

@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./Spinner.css";
 
 class Spinner extends React.Component {
@@ -16,7 +15,7 @@ class Spinner extends React.Component {
         "Calves"
         ],
 
-        options = {
+        options : {
             method: 'GET',
             headers: {
                 'X-RapidAPI-Key': '9f70ec10d0mshb56b0adfece8d42p1746f8jsn51a2dfd4690a',
@@ -122,10 +121,9 @@ class Spinner extends React.Component {
 
     getColor() {
         // randomly generate rbg values for wheel sectors
-        let r = Math.floor(Math.random() * 255);
-        let g = Math.floor(Math.random() * 255);
-        let b = Math.floor(Math.random() * 255);
-        return `rgba(${r},${g},${b},0.4)`;
+        var randomColor = ["#9B422C", "#97402B", "#933E2A", "#984935", "#9C5340", "#A56855", "#B27F6C", "#BF9683"]
+        let chosenColor = randomColor[Math.floor(Math.random() * randomColor.length)];
+        return `${chosenColor}`;
     }
 
     spin = () => {
