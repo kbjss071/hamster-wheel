@@ -12,15 +12,16 @@ class Spinner extends React.Component {
     },
 
     list: [
-        "biceps",
-        "triceps",
-        "chest",
-        "lower_back",
-        "middle_back",
-        "abdominals",
-        "quadriceps",
-        "calves"
+        "Biceps",
+        "Triceps",
+        "Chest",
+        "Low Back",
+        "Mid Back",
+        "Abs",
+        "Quads",
+        "Calves"
     ],
+
     radius: 75, // PIXELS
     rotate: 0, // DEGREES
     easeOut: 0, // SECONDS
@@ -30,7 +31,8 @@ class Spinner extends React.Component {
     net: null, // RADIANS
     result: null, // INDEX
     spinning: false,
-    exercise: null
+    exercise: null,
+    fetch: null
   };
 
   componentDidMount() {
@@ -167,18 +169,34 @@ class Spinner extends React.Component {
       result: result
     });
 
-    var res = this.state.list[result];
+    if (this.state.list[result] === 'Biceps') {
+        this.setState({fetch: 'biceps'})
+    } else if (this.state.list[result] === 'Triceps') {
+        this.setState({fetch: 'triceps'})
+    } else if (this.state.list[result] === 'Chest') {
+        this.setState({fetch: 'chest'})
+    } else if (this.state.list[result] === 'Low Back') {
+        this.setState({fetch: 'lower_back'})
+    } else if (this.state.list[result] === 'Mid Back') {
+        this.setState({fetch: 'middle_back'})
+    } else if (this.state.list[result] === 'Abs') {
+        this.setState({fetch: 'abdominals'})
+    } else if (this.state.list[result] === 'Quads') {
+        this.setState({fetch: 'quadriceps'})
+    } else if (this.state.list[result] === 'Calves') {
+        this.setState({fetch: 'calves'})
+    }
 
-    fetch(`https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=${res}`, this.state.options)
+    fetch(`https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=${this.state.fetch}`, this.state.options)
         .then(response => response.json())
         .then((response) => {
             for (let i = 0; i < response.length; i++) {
                 console.log(response[i].name)
-                    this.setState({
-                      exercise: response[i].name
-                    });
-                }
-            });
+                this.setState({
+                    exercise: response[i].name
+                });
+            }
+        });
   };
 
   
@@ -189,14 +207,15 @@ class Spinner extends React.Component {
       rotate: 0,
       easeOut: 0,
       result: null,
-      spinning: false
+      spinning: false,
+      exercise: null
     });
   };
 
   render() {
     return (
       <div className="App">
-        <h1>Spinning Prize Wheel React</h1>
+        <h1>Spinning Exercise Wheel</h1>
         <span id="selector">&#9660;</span>
         <canvas
           id="wheel"
@@ -221,7 +240,7 @@ class Spinner extends React.Component {
         )}
         <div className="display">
           <span id="readout">
-            YOU WON:{"  "}
+            YOUR EXERCISE:{"  "}
             <span id="result">{this.state.exercise}</span>
           </span>
         </div>
