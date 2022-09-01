@@ -1,13 +1,63 @@
+/* HTML element formatting */
+@import url('https://fonts.googleapis.com/css2?family=Happy+Monkey&display=swap');
+
+body, html {
+  font-family: 'Happy Monkey', sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  background-color: #b0bfd4;
+}
+input, button {
+  border: 2px solid #8a3a27;
+  background-color: #AC4931;
+  align-items: center;
+}
+
+Link {
+  color: #f4f1de;
+  text-decoration: none;
+}
+
+::placeholder, button {
+  color: #f4f1de;
+}
+/* Login overlay animations and stuff */
+.loginOverlay {
+  text-align: center;
+  background: #AC4931;
+  color: #f4f1de;
+  width: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Button Styles are from https://codepen.io/azureknight/pen/DbrdeB?editors=0100 */
+.linkbutton {
+  width: 64px;
+  height: 34px;
+  background: #AC4931;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.otherButtons {
+  width: 64px;
+  height: 34px;
+  background: #AC4931;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.buttonMagic {
+  width: 40px;
+  height: 34px;
+  margin-right: 0px;
+}
 /* FOLLOWING SECTION IS USER INPUT */
 
 /* Button Styles are from https://codepen.io/azureknight/pen/DbrdeB?editors=0100 */
 
-.linkbutton {
-  width: 64px;
-  height: 30px;
-  background: #AC4931;
-  cursor: pointer;
-}
   
 .popupTitle {
   float: left;
@@ -18,26 +68,96 @@
   -moz-transition: all 0.6s ease;
   -o-transition: all 0.6s ease;
   transition: all 0.6s ease;
+  float: left;
 }
-  
-&:hover {
-color: #fff;
-background: none;
-}
-
 
 .ease {
   width: 0;
   background: #282828;
-  height: 30px;
+  height: 34px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
+/* overlay formatting */
+
+.bmiOverlay {
+  background: #AC4931;
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: max-content;
+  gap: 5px;
+  background-color: #AC4931;
+  padding: 5px;
+  width: 500px;
+  height: 500px;
+}
+
+.grid-container > div {
+  background-color: #8a3a27;
+  color: #f4f1de;
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.item1 {
+  font-size: 15px;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column: 1;
+  width: 100px;
+}
+
+.item2 {
+  font-size: 15px;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-column: 1;
+  width: 100px;
+}
+
+.item3 {
+  font-size: 15px;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  grid-column: 1;
+  width: 100px;
+}
+
+.item4 {
+  font-size: 15px;
+  grid-row-start: 4;
+  grid-row-end: 4;
+  grid-column: 1 / 2;
+  width: 100px;
+}
+
+.item5 {
+  grid-column: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
+  font-size: 15px;
+  width: 450px;
+}
+
 .linkbutton:hover .ease {
 width: 100%;
+}
+
+.otherButtons:hover .ease {
+  width: 100%;
 }
 
 .nohover:hover {
@@ -50,9 +170,58 @@ color: #000;
   display: block;
   transition: 800ms;
   opacity: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
-
 .show.active {
   transform: translateY(100px) scale(0) rotateY(180deg);
   opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.navigationComponent {
+  position:absolute;
+  top:0%;
+  right:0%;
+}
+
+.BMIcomponent {
+  position:absolute;
+  
+}
+.signupBox {
+  background: #AC4931;
+  color: #f4f1de;
+  width: 250px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.flex-row {
+  flex-direction: row !important;
+}
+
+.mx-1 {
+  margin-right: 0.25rem !important;
+  margin-left: 0.25rem !important;
+}
+
+.px-1 {
+  padding-right: 0.25rem !important;
+  padding-left: 0.25rem !important;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.my-2 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
 }

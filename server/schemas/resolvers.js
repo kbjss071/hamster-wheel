@@ -1,11 +1,20 @@
 const { AuthenticationError } = require('apollo-server-express');
-const {Exercise, User} = require('../models');
+const Exercise = require('../models/Exercise');
+const Save = require('../models/Saved');
+const User = require('../models/User')
 const {signToken} = require('../utils/auth');
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
     Query: {
-        exercises: async() => Exercise.find(),
-        user: async(parent, args, context) => {
+        users: async() => {
+            return User.find()
+        },
+        user: async(parent, {userId}) => {
+            return User.findOne({_id: UserId});
+        },
+        exercises: async(parent, {muscle}) => Exercise.find({muscle: muscle}),
+        me: async(parent, args, context) => {
             if(context.user){
                 const user = await User.findById(context.user.id).populate({
                     populate: 'exercise'
@@ -50,7 +59,41 @@ const resolvers = {
 
             return { token, user };
 
+        },
+
+        saveExercise: async (parent, {exercise}, context) => {
+            if(context.user) {
+                const save = new Save({exercise});
+                return User.findByIdAndUpdate (context.user.id, {
+                        $push: {savedExercise: save}
+                    },
+                    {
+                        new: true
+                    }
+                )
+            }
+            throw new AuthenticationError('Not logged in')
+        },
+
+        deleteExercise: async (parent, { exerciseId }, context) => {
+            if(context.user){
+                return User.findOneAndUpdate(
+                    {_id: context.user._id},
+                    {$pull: {savedExercise: {_id: exerciseId}}},
+                    {new: true}
+                )
+            }
+            throw new AuthenticationError('You need to be logged in!')
+        },
+
+        removeUser: async(parent, args, context) => {
+            if(context.user) {
+                return User.findOneAndDelete({_id: context.user._id});
+            }
+            throw new AuthenticationError('You need to be logged in!');
         }
 
     },
 }
+
+module.exports = resolvers;

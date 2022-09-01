@@ -1,7 +1,6 @@
 const { Schema, model } = require('mongoose');
-const bcrpyt = require('bcrypt');
-
-const exerciseSchema = require('./Exercise');
+const bcrypt = require('bcrypt');
+const Save = require('./Saved')
 
 const userSchema = new Schema (
     {
@@ -19,10 +18,13 @@ const userSchema = new Schema (
         password: {
             type: String,
             required: true,
+            minLength: 5,
         },
-        full_name: {
+        firstName: {
             type: String,
-            required: true,
+        },
+        lastName: {
+            type: String
         },
         height: {
             type: Number
@@ -30,7 +32,7 @@ const userSchema = new Schema (
         weight: {
             type: Number
         },
-        savedExercise: [exerciseSchema]
+        savedExercise: [Save.schema]
     },
     {
         toJSON:{
@@ -54,7 +56,7 @@ userSchema.pre('save', async function (next) {
     return bcrypt.compare(password, this.password);
   };
   
-  // when we query a user, we'll also get another field called `bookCount` with the number of saved books we have
+  // when we query a user, we'll also get another field called `exerciseCount` with the number of exercises we have
   userSchema.virtual('exerciseCount').get(function () {
     return this.savedExercise.length;
   });
