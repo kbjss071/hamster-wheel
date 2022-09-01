@@ -40,13 +40,13 @@ function CheckBMI({ handleBMIClick, bmiPopup }) {
                 onChange={onHeightChange}
             />
 
-            <button class="buttoncolor" onClick={() => {handleClick(); calculateBMI();}}>Calculate BMI</button>
+            <button className="buttoncolor" onClick={() => {handleClick(); calculateBMI();}}>Calculate BMI</button>
         </div>
         <div className="loginComponent">
             <div className={`${bmiPopup ? "active" : ""} show`}>
         <div className="container">
-            <div class="grid-container">
-            <div class="bmiOverLay">
+            <div className="grid-container">
+            <div className="bmiOverLay">
                 <h1>Your BMI is... {BMI} </h1>
             </div>
             </div>
