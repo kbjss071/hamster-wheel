@@ -6,9 +6,10 @@ import React from 'react';
 import Home from './pages/Home';
 import Signup from './pages/Signup'
 import ExerciseSpinner from './pages/ExerciseSpinner';
-import Navigation from './components/Navigation'
+import Navigation from './components/Navigation/Navigation'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import BMIPage from './pages/BMI';
+import Login from './components/Login';
 
 
 const httpLink = createHttpLink({
@@ -48,6 +49,9 @@ function App() {
           <Route path="signup" element = {
             <Signup />
           }  />
+          <Route path='login' element = {
+            <Login />
+          } />
           <Route path="/exercises" element= {
             <ExerciseSpinner />
           } />
