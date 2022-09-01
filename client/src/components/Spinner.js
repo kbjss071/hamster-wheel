@@ -195,7 +195,8 @@ class Spinner extends React.Component {
       rotate: 0,
       easeOut: 0,
       result: null,
-      spinning: false
+      spinning: false,
+      exercise: null
     });
   };
 
