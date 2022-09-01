@@ -16,8 +16,8 @@ class Spinner extends React.Component {
     list: [
         "Biceps",
         "Triceps",
-        "chest",
-        "lower_back",
+        "Chest",
+        "Low Back",
         "middle_back",
         "abdominals",
         "quadriceps",
@@ -170,12 +170,16 @@ class Spinner extends React.Component {
     });
 
     if (this.state.list[result] === 'Biceps') {
-        var res = 'biceps'
-    } else if (this.state.list[result] === 'Biceps') {
-        var res = 'triceps'
+        this.setState({fetch: 'biceps'})
+    } else if (this.state.list[result] === 'Triceps') {
+        this.setState({fetch: 'triceps'})
+    } else if (this.state.list[result] === 'Chest') {
+        this.setState({fetch: 'chest'})
+    } else if (this.state.list[result] === 'Low Back') {
+        this.setState({fetch: 'lower_back'})
     }
 
-    fetch(`https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=${res}`, this.state.options)
+    fetch(`https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=${this.state.fetch}`, this.state.options)
         .then(response => response.json())
         .then((response) => {
             for (let i = 0; i < response.length; i++) {
