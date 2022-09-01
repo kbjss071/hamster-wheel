@@ -10,6 +10,7 @@ import Navigation from './components/Navigation/Navigation'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import BMIPage from './pages/BMI';
 import Login from './components/Login';
+import HealthInfo from './pages/HealthInfo';
 
 
 const httpLink = createHttpLink({
@@ -54,6 +55,9 @@ function App() {
           } />
           <Route path="/exercises" element= {
             <ExerciseSpinner />
+          } />
+          <Route path="/healthinfo" element= {
+            <HealthInfo />
           } />
         </Routes>
       </Router>
