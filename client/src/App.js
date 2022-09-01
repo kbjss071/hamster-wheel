@@ -6,9 +6,8 @@ import React from 'react';
 import Home from './pages/Home';
 import Signup from './pages/Signup'
 import ExerciseSpinner from './pages/ExerciseSpinner';
-import Nav from './components/Navagation'
+import Navigation from './components/Navigation'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Navigation from './components/Navagation';
 import BMIPage from './pages/BMI';
 
 
