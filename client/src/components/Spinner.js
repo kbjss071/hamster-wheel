@@ -11,8 +11,6 @@ class Spinner extends React.Component {
       }
     },
 
-    fetch: null,
-
     list: [
         "Biceps",
         "Triceps",
@@ -23,6 +21,7 @@ class Spinner extends React.Component {
         "Quads",
         "Calves"
     ],
+
     radius: 75, // PIXELS
     rotate: 0, // DEGREES
     easeOut: 0, // SECONDS
@@ -32,7 +31,8 @@ class Spinner extends React.Component {
     net: null, // RADIANS
     result: null, // INDEX
     spinning: false,
-    exercise: null
+    exercise: null,
+    fetch: null
   };
 
   componentDidMount() {
@@ -192,11 +192,11 @@ class Spinner extends React.Component {
         .then((response) => {
             for (let i = 0; i < response.length; i++) {
                 console.log(response[i].name)
-                    this.setState({
-                      exercise: response[i].name
-                    });
-                }
-            });
+                this.setState({
+                    exercise: response[i].name
+                });
+            }
+        });
   };
 
   
