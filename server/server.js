@@ -13,6 +13,10 @@ const server = new ApolloServer({
   resolvers,
   context: authMiddleware,
 });
+const cors = require("cors");
+require("dotenv").config({ path: "./config.env" });
+
+
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
