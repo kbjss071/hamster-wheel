@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Exercises from '../components/Exercises';
+import Navigation from "../components/Navigation";
 import Login from '../components/Login'
 
 
