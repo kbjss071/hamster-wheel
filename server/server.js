@@ -6,13 +6,17 @@ const { authMiddleware } = require('./utils/auth');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3008;
 const app = express();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware,
 });
+const cors = require("cors");
+require("dotenv").config({ path: "./config.env" });
+
+
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
