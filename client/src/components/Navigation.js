@@ -2,15 +2,9 @@ import React from "react";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 
-<<<<<<< HEAD:client/src/components/Navagation.js
-function Navigation({ handleLoginClick }){
-  
-}
 
-function Nav() {
-=======
+
 function Navigation({ handleLoginClick }) {
->>>>>>> 8183e2dc31f488556cc781cff55d6cf800aea529:client/src/components/Navigation.js
 
     const handleClick = () => {
         handleLoginClick()
