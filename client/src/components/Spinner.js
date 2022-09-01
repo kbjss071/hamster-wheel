@@ -177,6 +177,14 @@ class Spinner extends React.Component {
         this.setState({fetch: 'chest'})
     } else if (this.state.list[result] === 'Low Back') {
         this.setState({fetch: 'lower_back'})
+    } else if (this.state.list[result] === 'Mid Back') {
+        this.setState({fetch: 'middle_back'})
+    } else if (this.state.list[result] === 'Abs') {
+        this.setState({fetch: 'abdominals'})
+    } else if (this.state.list[result] === 'Quads') {
+        this.setState({fetch: 'quadriceps'})
+    } else if (this.state.list[result] === 'Calves') {
+        this.setState({fetch: 'calves'})
     }
 
     fetch(`https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?muscle=${this.state.fetch}`, this.state.options)
