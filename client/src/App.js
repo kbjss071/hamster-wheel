@@ -59,6 +59,9 @@ function App() {
           <Route path="/profile" element = {
             <Profile />
           } />
+          <Route path="/healthinfo" element = {
+            <HealthInfo />
+          } />
         </Routes>
       </Router>
     </ApolloProvider>

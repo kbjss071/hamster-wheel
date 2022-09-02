@@ -162,29 +162,6 @@ color: #000;
   text-align: center;
 }
 
-.flex-row {
-  flex-direction: row !important;
-}
-
-.mx-1 {
-  margin-right: 0.25rem !important;
-  margin-left: 0.25rem !important;
-}
-
-.px-1 {
-  padding-right: 0.25rem !important;
-  padding-left: 0.25rem !important;
-}
-
-.space-between {
-  justify-content: space-between;
-}
-
-.my-2 {
-  margin-top: 0.5rem !important;
-  margin-bottom: 0.5rem !important;
-}
-
 ul {
   text-decoration: none;
 }
@@ -199,4 +176,21 @@ ul {
 
 .BMIInfo {
   text-align: center;
+}
+
+.homePageContainer {
+  color: #3d405b;
+}
+
+Link, a, script, link {
+  text-decoration: none;
+}
+
+ul {
+  text-decoration: none;
+}
+
+.AHHHHH {
+  margin-right: 0px;
+  text-align: right;
 }
