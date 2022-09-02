@@ -69,11 +69,3 @@ function Navigation({ handleLoginClick }) {
   };
 
 export default Navigation; 
-          // <section className="navigationComponent">
-          //     <header>
-          //         <button onClick={handleClick} class="linkbutton"><div class="buttonMagic">Login</div><div class="ease buttonColor"></div></button>
-          //         <Link to="/exercises"><button class="otherButtons"><div class="buttonMagic">Spinner</div><div class="ease buttonColor"></div></button></Link>
-          //         <Link to="/bmi"><button class="otherButtons"><div class="buttonMagic">BMI</div><div class="ease buttonColor"></div></button></Link>
-          //     </header>
-  
-          // </section>

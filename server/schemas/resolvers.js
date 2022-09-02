@@ -3,15 +3,14 @@ const Exercise = require('../models/Exercise');
 const Save = require('../models/Saved');
 const User = require('../models/User')
 const {signToken} = require('../utils/auth');
-const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
     Query: {
         users: async() => {
             return User.find()
         },
-        user: async(parent, {userId}) => {
-            return User.findOne({_id: UserId});
+        user: async(parent, { userId }) => {
+            return User.findById({_id: userId}).populate({savedExercise: 'exercises'});
         },
         exercises: async(parent, {muscle}) => Exercise.find({muscle: muscle}),
         me: async(parent, args, context) => {
@@ -29,13 +28,14 @@ const resolvers = {
 
     Mutation: {
         addUser: async(parent, args) => {
-            console.log(args);
             const user = await User.create(args);
             const token = signToken(user);
 
             return { token, user };
         },
         updateUser: async (parent, args, context) => {
+            console.log(arg);
+            console.log(context);
             if (context.user) {
             return User.findByIdAndUpdate(context.user.id, args, {
                 new: true,

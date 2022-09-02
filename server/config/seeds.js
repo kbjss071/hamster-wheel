@@ -5,7 +5,7 @@ db.once('open', async () => {
 
   await Exercise.deleteMany();
 
-  const exercises = await Exercise.insertMany([
+  const exercise = await Exercise.insertMany([
     {
       "name": "Incline Hammer Curls",
       "type": "strength",
@@ -580,9 +580,9 @@ db.once('open', async () => {
     email: 'pamela@testmail.com',
     password: 'password12345',
     savedExercise: [
-      {
-        exercises: [exercises[0]._id, exercises[3]._id, exercises[1]._id],
-      }
+      exercise[0]._id,
+      exercise[3]._id,
+      exercise[1]._id
     ]
   });
 

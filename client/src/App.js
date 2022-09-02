@@ -10,7 +10,7 @@ import Navigation from './components/Navigation/Navigation'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import BMIPage from './pages/BMI';
 import Login from './components/Login';
-
+import Profile from './pages/Profile'
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -46,14 +46,17 @@ function App() {
           <Route path="/bmi" element= {
             <BMIPage />
           } />
-          <Route path="signup" element = {
+          <Route path="/signup" element = {
             <Signup />
           }  />
-          <Route path='login' element = {
+          <Route path='/login' element = {
             <Login />
           } />
           <Route path="/exercises" element= {
             <ExerciseSpinner />
+          } />
+          <Route path="/profile" element ={
+            <Profile />
           } />
         </Routes>
       </Router>
