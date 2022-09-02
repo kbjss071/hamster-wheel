@@ -58,7 +58,7 @@ function Navigation({ handleLoginClick }) {
     <header className="flex-row px-1">
       <h1>
         <Link to="/">
-          Hampster wheel
+          Hampster Wheel
         </Link>
       </h1>
 
