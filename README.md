@@ -42,7 +42,9 @@ Please contact https://github.com/kbjss071 with any questions
 
 ## App Preview
 
+
 ![Hamster Wheel](https://user-images.githubusercontent.com/103383531/188070123-36921b91-8779-45c6-b34b-f70937d86f06.gif)
+
 
 
 ## Deployed App Link

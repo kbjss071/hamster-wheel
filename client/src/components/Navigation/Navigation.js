@@ -30,12 +30,19 @@ function Navigation({ handleLoginClick }) {
       )
     } else {
       return (
+
+        <ul className="flex-row">
+          <li className="mx-1">
+            <Link to="/signup"><button class="otherButtons"><div class="buttonMagic"><b>Signup</b>
+              </div><div class="ease buttonColor"></div></button>
+
         <div className="AHHHHH">
             <Link to="/signup"><button class="otherButtons"><div class="buttonMagic">
               Signup</div><div class="ease buttonColor"></div></button>
+
             </Link>
             <Link to="/login">
-              <button onClick={handleClick} class="linkbutton"><div class="buttonMagic">Login</div><div class="ease buttonColor"></div></button>
+              <button onClick={handleClick} class="linkbutton"><div class="buttonMagic"><b>Login</b></div><div class="ease buttonColor"></div></button>
             </Link>
         </div>
       )
@@ -46,7 +53,7 @@ function Navigation({ handleLoginClick }) {
     <header className="flex-row px-1">
       <h1>
         <Link to="/">
-          Hampster Wheel
+        <b>Hampster Wheel</b>
         </Link>
       </h1>
 

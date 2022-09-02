@@ -215,7 +215,7 @@ class Spinner extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Spinning Exercise Wheel</h1>
+        <h1><b>Spinning Exercise Wheel</b></h1>
         <span id="selector">&#9660;</span>
         <canvas
           id="wheel"
@@ -240,7 +240,8 @@ class Spinner extends React.Component {
         )}
         <div className="display">
           <span id="readout">
-            YOUR EXERCISE:{"  "}
+            <b>YOUR EXERCISE:</b>
+            {"  "}
             <span id="result">{this.state.exercise}</span>
           </span>
         </div>
