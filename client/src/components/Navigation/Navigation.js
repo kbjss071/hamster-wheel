@@ -13,24 +13,25 @@ function Navigation({ handleLoginClick }) {
       return (
         <ul className="flex-row">
           <li className="mx-1">
-            <Link to="/exercises">
-              Exercises
+            <Link to="/exercises"><button class="otherButtons"><div class="buttonMagic">
+              Exercises</div><div class="ease buttonColor"></div></button>
             </Link>
           </li>
           <li className="mx-1">
-            <Link to="/bmi">
-              BMI
+            <Link to="/bmi"><button class="otherButtons"><div class="buttonMagic">
+              BMI</div><div class="ease buttonColor"></div></button>
             </Link>
           </li>
           <li className="mx-1">
-            <Link to="/profile">
-              Profile
+            <Link to="/profile"><button class="otherButtons"><div class="buttonMagic">
+              Profile</div><div class="ease buttonColor"></div></button>
             </Link>
           </li>
           <li className="mx-1">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <a href="/" onClick={() => Auth.logout()}>
-              Logout
+            <button class="otherButtons"><div class="buttonMagic">
+              Logout</div><div class="ease buttonColor"></div></button>
             </a>
           </li>
         </ul>
@@ -39,8 +40,8 @@ function Navigation({ handleLoginClick }) {
       return (
         <ul className="flex-row">
           <li className="mx-1">
-            <Link to="/signup">
-              Signup
+            <Link to="/signup"><button class="otherButtons"><div class="buttonMagic">
+              Signup</div><div class="ease buttonColor"></div></button>
             </Link>
           </li>
           <li className="mx-1 NavigationComponent">

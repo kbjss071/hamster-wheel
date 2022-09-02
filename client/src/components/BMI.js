@@ -1,9 +1,9 @@
-import { useMutation } from '@apollo/client';
+import { useMutation, useQuery } from '@apollo/client';
 import React, { useState } from 'react';
 import {UPDATE_USER} from '../utils/mutations'
 
 function CheckBMI({ handleBMIClick, bmiPopup }) {
-
+    const { loading, error, data} = useQuery()
     const [updateUser, {err}] = useMutation(UPDATE_USER)
     const [weight, setWeight] = useState('');
     const [height, setHeight] = useState('');
@@ -46,7 +46,8 @@ function CheckBMI({ handleBMIClick, bmiPopup }) {
                 placeholder='Weight (pounds)'
                 onChange={onWeightChange}
             />
-
+            <br />
+            <br />
             <input 
                 type='text'
                 value={height}
@@ -54,8 +55,11 @@ function CheckBMI({ handleBMIClick, bmiPopup }) {
                 placeholder='Height (inches)'
                 onChange={onHeightChange}
             />
-
+            <br />
+            <br />
             <button className="buttoncolor" onClick={() => {handleClick(); calculateBMI();}}>Calculate BMI</button>
+            <br />
+            <br />
         </div>
         <div className="loginComponent">
             <div className={`${bmiPopup ? "active" : ""} show`}>
@@ -73,6 +77,7 @@ function CheckBMI({ handleBMIClick, bmiPopup }) {
                 <div className="item3">25 to 29.9... Overweight</div>  
                 <div className="item4">30 and above... Obese</div>
                 <div className="item5">Body mass index (BMI) is a person’s weight in kilograms divided by the square of height in meters. BMI is an inexpensive and easy screening method for weight category—underweight, healthy weight, overweight, and obesity. BMI does not measure body fat directly, but BMI is moderately correlated with more direct measures of body fat 1,2,3. Furthermore, BMI appears to be as strongly correlated with various metabolic and disease outcome as are these more direct measures of body fatness</div> 
+
 </div>
         
     )
