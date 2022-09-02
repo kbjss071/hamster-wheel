@@ -42,8 +42,8 @@ Please contact https://github.com/kbjss071 with any questions
 
 ## App Preview
 
-![App Preview]()
+
 
 ## Deployed App Link
 
-Click [HERE]() to see our deployed app.
+Click [HERE](https://hamster-wheel-g9.herokuapp.com/) to see our deployed app.
