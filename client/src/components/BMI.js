@@ -56,7 +56,7 @@ function CheckBMI({ handleBMIClick, bmiPopup }) {
             />
             <br />
             <br />
-            <button className="buttoncolor" onClick={() => {handleClick(); calculateBMI();}}>Calculate BMI</button>
+            <button className="buttoncolor" onClick={() => {handleClick(); calculateBMI();}}><b>Calculate BMI</b></button>
             <br />
             <br />
         </div>
