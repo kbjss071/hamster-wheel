@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/hamster-wheel/static/css/main.bd954a99.css",
+    "main.js": "/hamster-wheel/static/js/main.4d574548.js",
+    "static/js/787.e0d0f417.chunk.js": "/hamster-wheel/static/js/787.e0d0f417.chunk.js",
+    "index.html": "/hamster-wheel/index.html",
+    "main.bd954a99.css.map": "/hamster-wheel/static/css/main.bd954a99.css.map",
+    "main.4d574548.js.map": "/hamster-wheel/static/js/main.4d574548.js.map",
+    "787.e0d0f417.chunk.js.map": "/hamster-wheel/static/js/787.e0d0f417.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bd954a99.css",
+    "static/js/main.4d574548.js"
+  ]
+}
