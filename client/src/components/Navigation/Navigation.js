@@ -11,45 +11,40 @@ function Navigation({ handleLoginClick }) {
   function showNavigation (){
     if(Auth.loggedIn()){
       return (
-        <ul className="flex-row">
-          <li className="mx-1">
+        <div className="AHHHHH">
             <Link to="/exercises"><button class="otherButtons"><div class="buttonMagic">
               Exercises</div><div class="ease buttonColor"></div></button>
             </Link>
-          </li>
-          <li className="mx-1">
             <Link to="/bmi"><button class="otherButtons"><div class="buttonMagic">
               BMI</div><div class="ease buttonColor"></div></button>
             </Link>
-          </li>
-          <li className="mx-1">
             <Link to="/profile"><button class="otherButtons"><div class="buttonMagic">
               Profile</div><div class="ease buttonColor"></div></button>
             </Link>
-          </li>
-          <li className="mx-1">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
             <a href="/" onClick={() => Auth.logout()}>
             <button class="otherButtons"><div class="buttonMagic">
               Logout</div><div class="ease buttonColor"></div></button>
             </a>
-          </li>
-        </ul>
+        </div>
       )
     } else {
       return (
+
         <ul className="flex-row">
           <li className="mx-1">
             <Link to="/signup"><button class="otherButtons"><div class="buttonMagic"><b>Signup</b>
               </div><div class="ease buttonColor"></div></button>
+
+        <div className="AHHHHH">
+            <Link to="/signup"><button class="otherButtons"><div class="buttonMagic">
+              Signup</div><div class="ease buttonColor"></div></button>
+
             </Link>
-          </li>
-          <li className="mx-1 NavigationComponent">
             <Link to="/login">
               <button onClick={handleClick} class="linkbutton"><div class="buttonMagic"><b>Login</b></div><div class="ease buttonColor"></div></button>
             </Link>
-          </li>
-        </ul>
+        </div>
       )
     }
   }

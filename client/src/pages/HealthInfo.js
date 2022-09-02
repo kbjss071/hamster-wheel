@@ -7,7 +7,7 @@ return (
         <h1 className="HealthTips">Tips for Exercising</h1>
         <br />
         <div className="tipBox">
-            <h2>Before You Workout</h2>
+            <h2>Before Your Workout</h2>
             <p>Get and stay hydrated to feel energized and keep your body happy!</p>
             <p>Eat a varity of healthy foods to help build muscle, keep your energy levels up, and help your body repair itself post workout. Carbs before a workout are best to fuel your body for optimal effects!</p>
             <p>Stretch your body to promote flexibility and lower the risk of injury.</p>
@@ -19,6 +19,12 @@ return (
             <p>Listen to music! It'll keep you pumped.</p>
             <p>Work out in intervals - for example: do as many reps as possible for 20 seconds, rest for 10 seconds, then repeat for 4 minutes. Again, rest for a minute, then repeat again.</p>
             <p>Again, stay hydrated! You can sweat out up to 10% of your body weight in a workout, but this isn't healthy. You don't want to lose more than 2%.</p>
+        </div>
+        <br />
+        <div className="tipBox">
+            <h2>After Your Workout</h2>
+            <p>Always finish workdowns with a cool down to let your health gradually return to a normal rate, and prevent your blood from pooling.</p>
+            <p>Eat something with high calories and protein after to repair and rebuild muscles.</p>
         </div>
     </div>
 )
