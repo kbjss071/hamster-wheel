@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import React from 'react';
 import Home from './pages/Home';
 import Signup from './pages/Signup'
 import ExerciseSpinner from './pages/ExerciseSpinner';
@@ -9,33 +10,7 @@ import Navigation from './components/Navigation/Navigation'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import BMIPage from './pages/BMI';
 import Login from './components/Login';
-import React, { useState, useEffect } from "react";
-
-
-
-const ProductDisplay = () => (
-  <section>
-    <div className="product">
-      <div className="description">
-      <h3>Donations</h3>
-      <h5>$5.00</h5>
-      </div>
-    </div>
-    <form action="/create-checkout-session" method="POST">
-      <button type="submit">
-        Checkout
-      </button>
-    </form>
-  </section>
-);
-
-const Message = ({ message }) => (
-  <section>
-    <p>{message}</p>
-  </section>
-);
-
-
+import HealthInfo from './pages/HealthInfo';
 
 
 const httpLink = createHttpLink({
@@ -61,22 +36,6 @@ const client = new ApolloClient({
 })
 
 function App() {
-  const [message, setMessage] = useState("");
-
-  useEffect(() => {
-    // Check to see if this is a redirect back from Checkout
-    const query = new URLSearchParams(window.location.search);
-
-    if (query.get("success")) {
-      setMessage("Order placed!");
-    }
-
-    if (query.get("canceled")) {
-      setMessage(
-        "Order canceled!"
-      );
-    }
-  }, []);
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -96,6 +55,9 @@ function App() {
           } />
           <Route path="/exercises" element= {
             <ExerciseSpinner />
+          } />
+          <Route path="/healthinfo" element= {
+            <HealthInfo />
           } />
         </Routes>
       </Router>
