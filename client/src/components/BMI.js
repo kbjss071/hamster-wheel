@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import {UPDATE_USER} from '../utils/mutations'
 
 function CheckBMI({ handleBMIClick, bmiPopup }) {
-    const { loading, error, data} = useQuery()
     const [updateUser, {err}] = useMutation(UPDATE_USER)
     const [weight, setWeight] = useState('');
     const [height, setHeight] = useState('');
