@@ -1,6 +1,5 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-const Save = require('./Saved')
 
 const userSchema = new Schema (
     {
@@ -32,7 +31,12 @@ const userSchema = new Schema (
         weight: {
             type: Number
         },
-        savedExercise: [Save.schema]
+        savedExercise: [
+            { 
+                type: Schema.Types.ObjectId,
+                ref: 'exercise'
+            }
+        ]
     },
     {
         toJSON:{

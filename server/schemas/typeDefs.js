@@ -24,7 +24,9 @@ const typeDefs = gql `
         email: String
         firstName: String
         lastName: String
-        savedExercise: [Save]
+        height: Float
+        weight: Float
+        savedExercise: [Exercise]
     }
 
     type Auth {
@@ -51,11 +53,14 @@ const typeDefs = gql `
             username: String
             email: String
             password: String
-            fullname: String
+            firstName: String
+            lastName: String
+            height: Float
+            weight: Float
         ): User
         login(username: String!, password: String!): Auth
         removeUser: User
-        saveExercise(exercises: [ID]!): Save
+        saveExercise(exercises: [ID]!): Exercise
         deleteExercise(exercise_id: ID!): User
     }
 `

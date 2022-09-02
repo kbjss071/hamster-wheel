@@ -6,7 +6,10 @@ export const QUERY_USER = gql`
             _id
             username
             email
-            fullname
+            firstName
+            lastName
+            height
+            weight
             savedExercise
         }
     }
@@ -18,7 +21,10 @@ export const QUERY_SINGLE_USER = gql`
             _id
             username
             email
-            fullname
+            firstName
+            lastName
+            height
+            weight
             savedExercise
         }
     }
@@ -30,7 +36,10 @@ export const QUERY_ME = gql `
             _id
             username
             email
-            fullname
+            firstName
+            lastName
+            height
+            weight
             savedExercise
         }
     }
@@ -40,10 +49,11 @@ export const QUERY_EXERCISE = gql `
     query allExercises {
         exercises {
             name
-            bodyPart
+            type
+            muscle
             equipment
-            target
-            exercise_id
+            difficulty
+            instructions
         }
     }
 `
