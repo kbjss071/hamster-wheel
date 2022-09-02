@@ -42,8 +42,9 @@ Please contact https://github.com/kbjss071 with any questions
 
 ## App Preview
 
-![App Preview]()
+![Hamster Wheel](https://user-images.githubusercontent.com/103383531/188070123-36921b91-8779-45c6-b34b-f70937d86f06.gif)
+
 
 ## Deployed App Link
 
-Click [HERE]() to see our deployed app.
+Click [HERE](https://hamster-wheel-g9.herokuapp.com/) to see our deployed app.
